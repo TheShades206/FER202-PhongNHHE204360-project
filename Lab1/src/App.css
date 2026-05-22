@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: #f3f4f6; /* Global background light mode */
-  color: #1f2937;            /* Global text light mode */
+  background-color: #f3f4f6;
+  color: #1f2937;
   transition: all 0.3s ease;
   font-family: system-ui, sans-serif;
   padding: 40px 20px;
@@ -13,8 +13,8 @@
 }
 
 .app-wrapper.dark-mode {
-  background-color: #0f1015; /* Background changes to dark in dark mode */
-  color: #e5e7eb;            /* Text color changes to light in dark mode */
+  background-color: #0f1015;
+  color: #e5e7eb;
 }
 
 .app-container {
@@ -22,24 +22,22 @@
   max-width: 480px;
   padding: 35px 25px;
   border-radius: 20px;
-  background-color: azure; /* Card theme in light mode */
+  background-color: azure;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   border: 1px solid #e2e8f0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  margin: auto 0; /* Perfect vertical centering without top clipping when overflowed */
+  margin: auto 0;
 }
 
-/* Card hover animation */
 .app-container:hover {
   transform: translateY(-6px);
   box-shadow: 0 15px 35px rgba(170, 59, 255, 0.08);
 }
 
-/* Card theme changes in dark mode */
 .app-wrapper.dark-mode .app-container {
-  background-color: #1e1f26; /* Card background changes to dark */
-  border-color: #2e303a;     /* Card border changes to dark */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Card shadow changes to dark */
+  background-color: #1e1f26;
+  border-color: #2e303a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .app-wrapper.dark-mode .app-container:hover {
@@ -57,7 +55,7 @@
 .avatar-img {
   width: 150px;
   height: auto;
-  border-radius: 8px; /* Subtle radius to fit nicely */
+  border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -136,7 +134,6 @@
   color: #ffffff;
 }
 
-/* Dark mode overrides for modern hobbies list */
 .app-wrapper.dark-mode .hobby-item {
   background-color: rgba(192, 132, 252, 0.08);
   border-color: rgba(192, 132, 252, 0.18);
@@ -174,7 +171,6 @@
   margin-bottom: 15px;
 }
 
-/* Button styling in light mode */
 .btn-action {
   padding: 9px 18px;
   font-size: 14px;
@@ -195,7 +191,6 @@
   box-shadow: 0 4px 12px rgba(170, 59, 255, 0.15);
 }
 
-/* Button styling changes in dark mode */
 .app-wrapper.dark-mode .btn-action {
   background-color: #2e303a;
   border-color: #3b3f4c;
