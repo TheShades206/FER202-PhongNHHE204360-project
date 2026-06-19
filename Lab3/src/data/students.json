@@ -1,0 +1,26 @@
+[
+  {
+    "id": "SV001",
+    "name": "Nguyễn Văn A",
+    "age": 20,
+    "major": "Software Engineering"
+  },
+  {
+    "id": "SV002",
+    "name": "Trần Thị B",
+    "age": 21,
+    "major": "Information Assurance"
+  },
+  {
+    "id": "SV003",
+    "name": "Lê Hoàng C",
+    "age": 22,
+    "major": "Graphic Design"
+  },
+  {
+    "id": "SV004",
+    "name": "Phạm Minh D",
+    "age": 19,
+    "major": "Artificial Intelligence"
+  }
+]
