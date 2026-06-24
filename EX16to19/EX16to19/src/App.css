@@ -1,0 +1,361 @@
+/* Styling for React Core Exercises (EX16-19) */
+:root {
+  --primary-gradient: linear-gradient(135deg, #aa3bff 0%, #6366f1 100%);
+  --hover-gradient: linear-gradient(135deg, #b965ff 0%, #4f46e5 100%);
+  --accent-gradient-teal: linear-gradient(135deg, #06b6d4 0%, #0d9488 100%);
+  --accent-gradient-orange: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  
+  --card-bg-light: rgba(255, 255, 255, 0.75);
+  --card-bg-dark: rgba(26, 27, 38, 0.7);
+  --card-border-light: rgba(170, 59, 255, 0.15);
+  --card-border-dark: rgba(192, 132, 252, 0.15);
+  
+  --glow-color: rgba(170, 59, 255, 0.1);
+}
+
+/* Global scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+.demo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header styling */
+.demo-header {
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+/* Fix title clipping by adding padding, height buffer, and adjusting letter-spacing */
+.demo-header h1 {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 10px 0;
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.3;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+.demo-subtitle {
+  color: var(--text);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Sticky Anchor Navigation Bar */
+.anchor-nav {
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border-light);
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin: 25px 0 45px;
+  justify-content: center;
+  box-shadow: var(--shadow), 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  .anchor-nav {
+    background: rgba(22, 23, 29, 0.8);
+    border-color: var(--card-border-dark);
+  }
+}
+
+.anchor-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text);
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.anchor-btn:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-color: var(--accent-border);
+}
+
+.anchor-btn:active {
+  transform: scale(0.96);
+}
+
+/* Scroll Panel Layout */
+.scroll-content-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  align-items: center;
+}
+
+.scroll-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  scroll-margin-top: 100px; /* spacing when jumping via anchor */
+}
+
+/* Visual Section Divider */
+.section-divider {
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--border) 50%, transparent 100%);
+  margin: 10px 0;
+}
+
+/* Glassmorphic Card */
+.demo-card {
+  background: var(--card-bg-light);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border-light);
+  border-radius: 24px;
+  padding: 40px;
+  width: 100%;
+  max-width: 750px;
+  box-shadow: var(--shadow), 0 20px 40px -15px var(--glow-color);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .demo-card {
+    background: var(--card-bg-dark);
+    border-color: var(--card-border-dark);
+  }
+}
+
+/* Fix text clipping on card headers */
+.demo-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.3;
+  padding: 6px 0;
+}
+
+/* Interactive Clicker Area */
+.clicker-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.counter-display-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(170, 59, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px 40px;
+  border: 1px solid var(--border);
+}
+
+.counter-display {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: var(--text-h);
+  line-height: 1;
+  font-family: var(--mono);
+}
+
+.counter-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text);
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* Interactive Action Buttons */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+}
+
+.action-btn, .snapshot-btn, .restore-btn {
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.action-btn {
+  background: var(--primary-gradient);
+  box-shadow: 0 4px 15px rgba(170, 59, 255, 0.2);
+}
+.action-btn:hover:not(:disabled) {
+  background: var(--hover-gradient);
+  transform: translateY(-2px);
+}
+
+.snapshot-btn {
+  background: var(--accent-gradient-teal);
+  box-shadow: 0 4px 15px rgba(13, 148, 136, 0.2);
+}
+.snapshot-btn:hover {
+  transform: translateY(-2px);
+}
+
+.restore-btn {
+  background: var(--accent-gradient-orange);
+  box-shadow: 0 4px 15px rgba(234, 88, 12, 0.2);
+}
+.restore-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.action-btn:active, .snapshot-btn:active, .restore-btn:active {
+  transform: translateY(1px);
+}
+
+/* EX19 Animal Cards layout */
+.animal-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.animal-card {
+  background: var(--card-bg-light);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+@media (prefers-color-scheme: dark) {
+  .animal-card {
+    background: var(--card-bg-dark);
+  }
+}
+
+.animal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent-border);
+}
+
+.animal-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.animal-name {
+  font-size: 1.3rem;
+  margin: 0 0 2px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.animal-scientific {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text);
+  margin: 0;
+}
+
+.animal-stats {
+  font-size: 0.9rem;
+  color: var(--text-h);
+  margin-bottom: 15px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0;
+}
+
+.stat-label {
+  color: var(--text);
+}
+
+.stat-value {
+  font-weight: 600;
+}
+
+.more-info-btn {
+  width: 100%;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  color: var(--text-h);
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.more-info-btn:hover {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
